@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Job Posting - HireFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0b0d10',
+            card: '#161a22',
+            border: '#232838',
+            text: '#e6e9f0',
+            muted: '#9aa4bf',
+            primary: '#5b7cfa'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bg text-text min-h-screen">
+  <!-- Navigation -->
+  <nav class="border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-semibold">HireFlow</span>
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="company-dashboard.html" class="text-muted hover:text-text transition-colors">Back to Dashboard</a>
+          <button class="w-9 h-9 bg-card border border-border rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">Create Job Posting</h1>
+      <p class="text-muted">Fill in the details below to create a new job posting</p>
+    </div>
+
+    <!-- Info Banner -->
+    <div class="bg-primary bg-opacity-10 border border-primary rounded-lg p-4 mb-8">
+      <div class="flex gap-3">
+        <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div>
+          <p class="text-sm font-medium mb-1">How Your Job Posting Works</p>
+          <p class="text-sm text-muted">
+            The information you provide will help match qualified candidates to your position. Our system analyzes applicant resumes against your job requirements to identify the best matches and streamline your hiring process.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-8">
+      <!-- Basic Information Section -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
+        
+        <div class="space-y-5">
+          <!-- Job Title -->
+          <div>
+            <label for="title" class="block text-sm font-medium mb-2">
+              Job Title <span class="text-red-400">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="title" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              placeholder="e.g., Senior Software Engineer"
+            >
+            <p class="text-xs text-muted mt-1.5">Choose a clear, descriptive title that candidates will search for</p>
+          </div>
+
+          <!-- Department -->
+          <div>
+            <label for="department" class="block text-sm font-medium mb-2">
+              Department <span class="text-red-400">*</span>
+            </label>
+            <select 
+              id="department" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+            >
+              <option value="">Select a department</option>
+              <option>Engineering</option>
+              <option>Product</option>
+              <option>Design</option>
+              <option>Marketing</option>
+              <option>Sales</option>
+              <option>Data & Analytics</option>
+              <option>Operations</option>
+              <option>Human Resources</option>
+              <option>Finance</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div>
+            <label for="location" class="block text-sm font-medium mb-2">
+              Location <span class="text-red-400">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="location" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              placeholder="e.g., San Francisco, CA or Remote"
+            >
+            <p class="text-xs text-muted mt-1.5">Specify the work location or indicate if the role is remote</p>
+          </div>
+
+          <!-- Employment Type -->
+          <div>
+            <label for="employment-type" class="block text-sm font-medium mb-2">
+              Employment Type <span class="text-red-400">*</span>
+            </label>
+            <select 
+              id="employment-type" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+            >
+              <option value="">Select employment type</option>
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Contract</option>
+              <option>Internship</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Description Section -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-6">Job Description</h2>
+        
+        <div class="space-y-5">
+          <!-- Description -->
+          <div>
+            <label for="description" class="block text-sm font-medium mb-2">
+              Job Description <span class="text-red-400">*</span>
+            </label>
+            <textarea 
+              id="description" 
+              rows="8"
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="Describe the role, key responsibilities, and what the candidate will be working on..."
+            ></textarea>
+            <p class="text-xs text-muted mt-1.5">Provide a clear overview of what the role involves and day-to-day responsibilities</p>
+          </div>
+
+          <!-- Responsibilities -->
+          <div>
+            <label for="responsibilities" class="block text-sm font-medium mb-2">
+              Key Responsibilities (Optional)
+            </label>
+            <textarea 
+              id="responsibilities" 
+              rows="6"
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="• Design and implement scalable backend systems
+• Collaborate with cross-functional teams
+• Mentor junior engineers"
+            ></textarea>
+            <p class="text-xs text-muted mt-1.5">List specific tasks and duties. Use bullet points for clarity</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Requirements Section -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-6">Requirements</h2>
+        
+        <div class="space-y-5">
+          <!-- Required Skills -->
+          <div>
+            <label for="required-skills" class="block text-sm font-medium mb-2">
+              Required Skills <span class="text-red-400">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="required-skills" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              placeholder="e.g., Python, React, AWS, PostgreSQL"
+            >
+            <p class="text-xs text-muted mt-1.5">Separate skills with commas. These will be used to match candidates</p>
+          </div>
+
+          <!-- Preferred Skills -->
+          <div>
+            <label for="preferred-skills" class="block text-sm font-medium mb-2">
+              Preferred Skills (Optional)
+            </label>
+            <input 
+              type="text" 
+              id="preferred-skills" 
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              placeholder="e.g., Docker, Kubernetes, TypeScript"
+            >
+            <p class="text-xs text-muted mt-1.5">Nice-to-have skills that would be beneficial but aren't required</p>
+          </div>
+
+          <!-- Experience Level -->
+          <div>
+            <label for="experience-level" class="block text-sm font-medium mb-2">
+              Experience Level <span class="text-red-400">*</span>
+            </label>
+            <select 
+              id="experience-level" 
+              required
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+            >
+              <option value="">Select experience level</option>
+              <option>Entry Level (0-2 years)</option>
+              <option>Mid Level (2-5 years)</option>
+              <option>Senior Level (5-8 years)</option>
+              <option>Lead/Principal (8+ years)</option>
+            </select>
+          </div>
+
+          <!-- Education Requirements -->
+          <div>
+            <label for="education" class="block text-sm font-medium mb-2">
+              Education Requirements (Optional)
+            </label>
+            <select 
+              id="education" 
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+            >
+              <option value="">Select education requirement</option>
+              <option>High School / GED</option>
+              <option>Associate's Degree</option>
+              <option>Bachelor's Degree</option>
+              <option>Master's Degree</option>
+              <option>Ph.D.</option>
+              <option>Not Required</option>
+            </select>
+          </div>
+
+          <!-- Qualifications -->
+          <div>
+            <label for="qualifications" class="block text-sm font-medium mb-2">
+              Additional Qualifications
+            </label>
+            <textarea 
+              id="qualifications" 
+              rows="5"
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="• 5+ years of professional software development experience
+• Strong problem-solving and communication skills
+• Experience with distributed systems"
+            ></textarea>
+            <p class="text-xs text-muted mt-1.5">List any additional requirements or qualifications</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compensation & Benefits Section -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-6">Compensation & Benefits</h2>
+        
+        <div class="space-y-5">
+          <!-- Salary Range -->
+          <div>
+            <label class="block text-sm font-medium mb-2">
+              Salary Range (Optional)
+            </label>
+            <div class="grid grid-cols-2 gap-4">
+              <input 
+                type="text" 
+                placeholder="Min (e.g., 120000)" 
+                class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              >
+              <input 
+                type="text" 
+                placeholder="Max (e.g., 180000)" 
+                class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+              >
+            </div>
+            <p class="text-xs text-muted mt-1.5">Providing salary range increases application quality and transparency</p>
+          </div>
+
+          <!-- Benefits -->
+          <div>
+            <label for="benefits" class="block text-sm font-medium mb-2">
+              Benefits & Perks (Optional)
+            </label>
+            <textarea 
+              id="benefits" 
+              rows="5"
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors resize-none"
+              placeholder="• Health, dental, and vision insurance
+• 401(k) with company match
+• Unlimited PTO
+• Remote work flexibility
+• Professional development budget"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Settings Section -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-6">Application Settings</h2>
+        
+        <div class="space-y-5">
+          <!-- Application Deadline -->
+          <div>
+            <label for="deadline" class="block text-sm font-medium mb-2">
+              Application Deadline (Optional)
+            </label>
+            <input 
+              type="date" 
+              id="deadline" 
+              class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+            >
+            <p class="text-xs text-muted mt-1.5">Leave blank to keep the posting open indefinitely</p>
+          </div>
+
+          <!-- Screening Questions -->
+          <div>
+            <label class="block text-sm font-medium mb-3">Screening Questions</label>
+            <div class="space-y-3">
+              <label class="flex items-start gap-2">
+                <input type="checkbox" class="w-4 h-4 mt-1 rounded border-border bg-bg checked:bg-primary">
+                <span class="text-sm">Require years of experience</span>
+              </label>
+              <label class="flex items-start gap-2">
+                <input type="checkbox" class="w-4 h-4 mt-1 rounded border-border bg-bg checked:bg-primary">
+                <span class="text-sm">Ask about work authorization</span>
+              </label>
+              <label class="flex items-start gap-2">
+                <input type="checkbox" class="w-4 h-4 mt-1 rounded border-border bg-bg checked:bg-primary">
+                <span class="text-sm">Ask about relocation willingness</span>
+              </label>
+              <label class="flex items-start gap-2">
+                <input type="checkbox" class="w-4 h-4 mt-1 rounded border-border bg-bg checked:bg-primary">
+                <span class="text-sm">Require cover letter</span>
+              </label>
+            </div>
+            <p class="text-xs text-muted mt-3">Pre-screening questions help filter applicants before they apply</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Matching Info Box -->
+      <div class="bg-primary bg-opacity-10 border border-primary rounded-lg p-4">
+        <div class="flex gap-3">
+          <svg class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+          <div>
+            <p class="text-sm font-medium mb-1">Intelligent Candidate Matching</p>
+            <p class="text-sm text-muted">
+              Based on the job requirements you provide, our system will automatically evaluate applicants' resumes and qualifications. You'll receive match scores and rankings to help you identify the most qualified candidates quickly.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 pt-4">
+        <button 
+          type="submit" 
+          class="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors font-medium"
+        >
+          Publish Job Posting
+        </button>
+        <button 
+          type="button" 
+          class="flex-1 border border-border px-6 py-3 rounded-lg hover:border-primary transition-colors font-medium"
+        >
+          Save as Draft
+        </button>
+        <a 
+          href="company-dashboard.html" 
+          class="sm:w-auto border border-border px-6 py-3 rounded-lg hover:border-primary transition-colors font-medium text-center"
+        >
+          Cancel
+        </a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-muted text-sm">&copy; 2024 HireFlow. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Terms of Service</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

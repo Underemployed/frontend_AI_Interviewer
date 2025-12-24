@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Applications - HireFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0b0d10',
+            card: '#161a22',
+            border: '#232838',
+            text: '#e6e9f0',
+            muted: '#9aa4bf',
+            primary: '#5b7cfa'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bg text-text min-h-screen">
+  <!-- Navigation -->
+  <nav class="border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-semibold">HireFlow</span>
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="jobs.html" class="text-muted hover:text-text transition-colors">Jobs</a>
+          <a href="application-status.html" class="text-text font-medium">My Applications</a>
+          <button class="w-9 h-9 bg-card border border-border rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">My Applications</h1>
+      <p class="text-muted">Track the status of your job applications</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex gap-4 mb-6 border-b border-border">
+      <button class="px-4 py-3 border-b-2 border-primary text-primary font-medium">
+        All Applications (3)
+      </button>
+      <button class="px-4 py-3 text-muted hover:text-text transition-colors">
+        In Review (2)
+      </button>
+      <button class="px-4 py-3 text-muted hover:text-text transition-colors">
+        Interview (1)
+      </button>
+      <button class="px-4 py-3 text-muted hover:text-text transition-colors">
+        Archived (0)
+      </button>
+    </div>
+
+    <!-- Application Cards -->
+    <div class="space-y-4">
+      <!-- Application 1 - Interview Stage -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <!-- Left Section -->
+          <div class="flex-1">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-bg border border-border rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-semibold text-primary">TC</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold mb-1">Senior Software Engineer</h3>
+                <p class="text-muted mb-2">TechCorp Inc.</p>
+                <p class="text-sm text-muted">Applied on December 15, 2024</p>
+              </div>
+            </div>
+
+            <!-- Status Timeline -->
+            <div class="ml-14 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Application Submitted</p>
+                  <p class="text-sm text-muted">December 15, 2024</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Resume Reviewed</p>
+                  <p class="text-sm text-muted">December 16, 2024</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <div>
+                  <p class="font-medium text-primary">Interview Scheduled</p>
+                  <p class="text-sm text-muted">December 28, 2024 at 2:00 PM PST</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-border flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                  <p class="text-muted">Final Decision</p>
+                  <p class="text-sm text-muted">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section - Scores -->
+          <div class="lg:w-80 space-y-4">
+            <!-- Resume Score -->
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Resume Match</span>
+                <span class="text-2xl font-bold text-primary">85%</span>
+              </div>
+              <div class="w-full bg-border rounded-full h-2 mb-3">
+                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+              </div>
+              <p class="text-xs text-muted">
+                Your skills and experience align well with the job requirements
+              </p>
+            </div>
+
+            <!-- Interview Status -->
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Interview</span>
+                <span class="px-2 py-1 bg-primary bg-opacity-20 text-primary text-xs rounded-full">Scheduled</span>
+              </div>
+              <p class="text-sm mb-2">Technical Interview</p>
+              <p class="text-xs text-muted">December 28, 2024 at 2:00 PM PST</p>
+              <button class="w-full mt-3 px-4 py-2 border border-border rounded-lg hover:border-primary transition-colors text-sm">
+                Add to Calendar
+              </button>
+            </div>
+
+            <!-- Action Button -->
+            <button class="w-full px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application 2 - Under Review -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-bg border border-border rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-semibold text-primary">DS</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold mb-1">Product Designer</h3>
+                <p class="text-muted mb-2">DesignStudio</p>
+                <p class="text-sm text-muted">Applied on December 18, 2024</p>
+              </div>
+            </div>
+
+            <div class="ml-14 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-medium">Application Submitted</p>
+                  <p class="text-sm text-muted">December 18, 2024</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <div>
+                  <p class="font-medium text-primary">Under Review</p>
+                  <p class="text-sm text-muted">Expected response within 3-5 business days</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-border flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                  <p class="text-muted">Interview</p>
+                  <p class="text-sm text-muted">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-80 space-y-4">
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Resume Match</span>
+                <span class="text-2xl font-bold text-primary">78%</span>
+              </div>
+              <div class="w-full bg-border rounded-full h-2 mb-3">
+                <div class="bg-primary h-2 rounded-full" style="width: 78%"></div>
+              </div>
+              <p class="text-xs text-muted">
+                Good match. Your design portfolio demonstrates relevant skills
+              </p>
+            </div>
+
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Status</span>
+                <span class="px-2 py-1 bg-yellow-600 bg-opacity-20 text-yellow-400 text-xs rounded-full">In Review</span>
+              </div>
+              <p class="text-xs text-muted">
+                The hiring team is currently reviewing your application
+              </p>
+            </div>
+
+            <button class="w-full px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application 3 - Recently Submitted -->
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-bg border border-border rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-lg font-semibold text-primary">DL</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold mb-1">Data Scientist</h3>
+                <p class="text-muted mb-2">DataLabs Analytics</p>
+                <p class="text-sm text-muted">Applied on December 22, 2024</p>
+              </div>
+            </div>
+
+            <div class="ml-14 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-white"></div>
+                </div>
+                <div>
+                  <p class="font-medium text-primary">Application Submitted</p>
+                  <p class="text-sm text-muted">December 22, 2024</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-border flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                  <p class="text-muted">Resume Review</p>
+                  <p class="text-sm text-muted">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-80 space-y-4">
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium">Status</span>
+                <span class="px-2 py-1 bg-blue-600 bg-opacity-20 text-blue-400 text-xs rounded-full">Processing</span>
+              </div>
+              <p class="text-xs text-muted">
+                Your application is being processed. You'll receive an update within 2-3 business days.
+              </p>
+            </div>
+
+            <button class="w-full px-4 py-2.5 border border-border rounded-lg hover:border-primary transition-colors font-medium">
+              Withdraw Application
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State (Hidden - show when no applications) -->
+    <!-- <div class="text-center py-16">
+      <svg class="w-16 h-16 text-muted mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      </svg>
+      <h3 class="text-xl font-semibold mb-2">No applications yet</h3>
+      <p class="text-muted mb-6">Start applying to jobs to see your applications here</p>
+      <a href="jobs.html" class="inline-block px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+        Browse Jobs
+      </a>
+    </div> -->
+
+    <!-- Info Box -->
+    <div class="mt-8 bg-card border border-border rounded-lg p-6">
+      <h3 class="font-semibold mb-3">Understanding Your Application Status</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>
+          <p class="font-medium mb-1">Resume Match Score</p>
+          <p class="text-muted">Shows how well your resume aligns with the job requirements based on skills, experience, and qualifications.</p>
+        </div>
+        <div>
+          <p class="font-medium mb-1">Application Status</p>
+          <p class="text-muted">Tracks where your application is in the hiring process, from initial submission to final decision.</p>
+        </div>
+        <div>
+          <p class="font-medium mb-1">Interview Stage</p>
+          <p class="text-muted">If selected, you'll see interview details including date, time, and format (phone, video, or in-person).</p>
+        </div>
+        <div>
+          <p class="font-medium mb-1">Timeline</p>
+          <p class="text-muted">Most applications receive an initial response within 3-5 business days. Check back regularly for updates.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-muted text-sm">&copy; 2024 HireFlow. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Terms of Service</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

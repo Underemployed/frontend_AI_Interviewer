@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Dashboard - HireFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#0b0d10',
+            card: '#161a22',
+            border: '#232838',
+            text: '#e6e9f0',
+            muted: '#9aa4bf',
+            primary: '#5b7cfa'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bg text-text min-h-screen">
+  <!-- Navigation -->
+  <nav class="border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-semibold">HireFlow</span>
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="company-dashboard.html" class="text-text font-medium">Dashboard</a>
+          <a href="#" class="text-muted hover:text-text transition-colors">Settings</a>
+          <button class="w-9 h-9 bg-card border border-border rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+      <div>
+        <h1 class="text-3xl font-bold mb-2">Your Job Postings</h1>
+        <p class="text-muted">Manage your job listings and review applicants</p>
+      </div>
+      <a href="create-job.html" class="px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+        Create Job Posting
+      </a>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-muted mb-1">Active Jobs</p>
+            <p class="text-3xl font-bold">5</p>
+          </div>
+          <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-muted mb-1">Total Applications</p>
+            <p class="text-3xl font-bold">47</p>
+          </div>
+          <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-card border border-border rounded-lg p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-muted mb-1">In Interview</p>
+            <p class="text-3xl font-bold">12</p>
+          </div>
+          <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter/Sort Bar -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+      <div class="flex-1">
+        <input 
+          type="text" 
+          placeholder="Search job postings..." 
+          class="w-full bg-card border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors"
+        >
+      </div>
+      <select class="bg-card border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors">
+        <option>All Status</option>
+        <option>Active</option>
+        <option>Paused</option>
+        <option>Closed</option>
+      </select>
+      <select class="bg-card border border-border rounded-lg px-4 py-2.5 focus:outline-none focus:border-primary transition-colors">
+        <option>Sort by Date</option>
+        <option>Sort by Applications</option>
+        <option>Sort by Title</option>
+      </select>
+    </div>
+
+    <!-- Job Postings List -->
+    <div class="space-y-4">
+      <!-- Job Card 1 -->
+      <div class="bg-card border border-border rounded-lg p-6 hover:border-primary transition-colors">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="flex items-center gap-3 mb-2">
+                  <h3 class="text-xl font-semibold">Senior Software Engineer</h3>
+                  <span class="px-2 py-1 bg-green-600 bg-opacity-20 text-green-400 text-xs rounded-full">Active</span>
+                </div>
+                <p class="text-muted mb-2">Posted on December 10, 2024</p>
+              </div>
+            </div>
+            
+            <p class="text-muted mb-4">We're looking for an experienced software engineer to join our platform team. You'll work on building scalable backend systems...</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">Python</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">React</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">AWS</span>
+            </div>
+
+            <div class="flex flex-wrap gap-6 text-sm">
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                San Francisco, CA
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Full-time
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                156 views
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:w-80 flex flex-col gap-4">
+            <!-- Applicant Stats -->
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p class="text-2xl font-bold text-primary">18</p>
+                  <p class="text-xs text-muted mt-1">Total</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-yellow-400">6</p>
+                  <p class="text-xs text-muted mt-1">Reviewing</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-green-400">4</p>
+                  <p class="text-xs text-muted mt-1">Interview</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col gap-2">
+              <a href="job-applicants.html" class="px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium text-center">
+                View Applicants
+              </a>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-primary transition-colors">
+                Edit Job
+              </button>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-red-600 hover:text-red-400 transition-colors">
+                Close Posting
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Card 2 -->
+      <div class="bg-card border border-border rounded-lg p-6 hover:border-primary transition-colors">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="flex items-center gap-3 mb-2">
+                  <h3 class="text-xl font-semibold">Product Designer</h3>
+                  <span class="px-2 py-1 bg-green-600 bg-opacity-20 text-green-400 text-xs rounded-full">Active</span>
+                </div>
+                <p class="text-muted mb-2">Posted on December 14, 2024</p>
+              </div>
+            </div>
+            
+            <p class="text-muted mb-4">Join our design team to create beautiful and intuitive user experiences. You'll work closely with product and engineering...</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">Figma</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">UI/UX</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">Design Systems</span>
+            </div>
+
+            <div class="flex flex-wrap gap-6 text-sm">
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                Remote
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Full-time
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                89 views
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:w-80 flex flex-col gap-4">
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p class="text-2xl font-bold text-primary">12</p>
+                  <p class="text-xs text-muted mt-1">Total</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-yellow-400">4</p>
+                  <p class="text-xs text-muted mt-1">Reviewing</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-green-400">3</p>
+                  <p class="text-xs text-muted mt-1">Interview</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a href="job-applicants.html" class="px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium text-center">
+                View Applicants
+              </a>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-primary transition-colors">
+                Edit Job
+              </button>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-red-600 hover:text-red-400 transition-colors">
+                Close Posting
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Card 3 -->
+      <div class="bg-card border border-border rounded-lg p-6 hover:border-primary transition-colors">
+        <div class="flex flex-col lg:flex-row gap-6">
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="flex items-center gap-3 mb-2">
+                  <h3 class="text-xl font-semibold">Data Scientist</h3>
+                  <span class="px-2 py-1 bg-green-600 bg-opacity-20 text-green-400 text-xs rounded-full">Active</span>
+                </div>
+                <p class="text-muted mb-2">Posted on December 16, 2024</p>
+              </div>
+            </div>
+            
+            <p class="text-muted mb-4">We're seeking a data scientist to help us uncover insights from our data and build predictive models...</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">Python</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">Machine Learning</span>
+              <span class="px-3 py-1 bg-bg border border-border rounded-full text-sm">SQL</span>
+            </div>
+
+            <div class="flex flex-wrap gap-6 text-sm">
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                New York, NY
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Full-time
+              </span>
+              <span class="flex items-center gap-1 text-muted">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                67 views
+              </span>
+            </div>
+          </div>
+
+          <div class="lg:w-80 flex flex-col gap-4">
+            <div class="bg-bg border border-border rounded-lg p-4">
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p class="text-2xl font-bold text-primary">9</p>
+                  <p class="text-xs text-muted mt-1">Total</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-yellow-400">5</p>
+                  <p class="text-xs text-muted mt-1">Reviewing</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-bold text-green-400">2</p>
+                  <p class="text-xs text-muted mt-1">Interview</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <a href="job-applicants.html" class="px-4 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium text-center">
+                View Applicants
+              </a>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-primary transition-colors">
+                Edit Job
+              </button>
+              <button class="px-4 py-2.5 border border-border rounded-lg hover:border-red-600 hover:text-red-400 transition-colors">
+                Close Posting
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State (Hidden - show when no jobs) -->
+    <!-- <div class="text-center py-16">
+      <svg class="w-16 h-16 text-muted mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+      <h3 class="text-xl font-semibold mb-2">No job postings yet</h3>
+      <p class="text-muted mb-6">Create your first job posting to start receiving applications</p>
+      <a href="create-job.html" class="inline-block px-6 py-2.5 bg-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium">
+        Create Job Posting
+      </a>
+    </div> -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-muted text-sm">&copy; 2024 HireFlow. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Terms of Service</a>
+          <a href="#" class="text-muted hover:text-text text-sm transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
