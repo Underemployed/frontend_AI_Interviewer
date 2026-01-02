@@ -9,6 +9,8 @@ import Landing from './pages/Landing';
 import UserLogin from './pages/UserLogin';
 import UserSignup from './pages/UserSignup';
 import Privacy from './pages/Privacy';
+import ProtectedRoute from './components/ProtectedRoute';
+import UserDashboard from './pages/UserDashboard';
 
 
 function App() {
@@ -32,6 +34,28 @@ function App() {
             <Route exact path ="/user/signup">
                 <UserSignup/>
             </Route>
+
+            {/* <Route
+              path="/user/dashboard"
+              element={
+                <ProtectedRoute role="user">
+                  <UserDashboard />
+                </ProtectedRoute>
+              }
+            /> */}
+            <Route>
+              <UserDashboard/>
+            </Route>
+
+            {/* <Route
+              path="/company/dashboard"
+              element={
+                <ProtectedRoute role="company">
+                  <CompanyDashboard />
+                </ProtectedRoute>
+              }
+            /> */}
+
             <Route exact path ="/blog/:id">
                 <BlogDetails/>
             </Route>

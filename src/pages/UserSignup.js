@@ -1,6 +1,58 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 const UserSignup = () => {
+    const history = useHistory();
+    const [error, setError] = useState("");
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        mobile: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
+        if (formData.password !== formData.confirmPassword) {
+            setError("Passwords do not match");
+            return;
+        }
+
+        try {
+            const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+            const res = await fetch(`${backendUrl}/api/auth/signup`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    mobile: formData.mobile,
+                    password: formData.password
+                })
+            });
+
+            if (!res.ok) {
+                setError("Signup failed");
+                return;
+            }
+
+            history.push("/user/login");
+        } catch (err) {
+            setError("An error occurred");
+        }
+    };
+
     return ( 
         <div className="userSignup">
             <section className="py-5">
@@ -10,10 +62,10 @@ const UserSignup = () => {
                             <h2 className="card-title">Create Job Seeker Account</h2>
                         </div>
                         <div className="card-body">
-                            <div id="errorMessage" className="alert alert-error hidden"></div>
+                            <div id="errorMessage" className={`alert alert-error ${error ? '' : 'hidden'}`}>{error}</div>
                             <div id="successMessage" className="alert alert-success hidden"></div>
 
-                            <form id="signupForm">
+                            <form id="signupForm" onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="fullName" className="form-label">Full Name</label>
                                     <input
@@ -22,6 +74,8 @@ const UserSignup = () => {
                                         name="fullName"
                                         className="form-input"
                                         placeholder="John Doe"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -34,6 +88,8 @@ const UserSignup = () => {
                                         name="email"
                                         className="form-input"
                                         placeholder="your.email@example.com"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -46,6 +102,8 @@ const UserSignup = () => {
                                         name="mobile"
                                         className="form-input"
                                         placeholder="+1 234 567 8900"
+                                        value={formData.mobile}
+                                        onChange={handleChange}
                                         required
                                     />
                                     <span className="form-help">Used for interview notifications</span>
@@ -60,6 +118,8 @@ const UserSignup = () => {
                                         className="form-input"
                                         placeholder="At least 8 characters"
                                         minLength="8"
+                                        value={formData.password}
+                                        onChange={handleChange}
                                         required
                                     />
                                 </div>
@@ -73,6 +133,8 @@ const UserSignup = () => {
                                         className="form-input"
                                         placeholder="Re-enter password"
                                         minLength="8"
+                                        value={formData.confirmPassword}
+                                        onChange={handleChange}
                                         required
                                     />
                                     <span id="passwordError" className="form-error hidden">Passwords do not match</span>
@@ -93,7 +155,7 @@ const UserSignup = () => {
                                     </div>
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-block btn-large">
+                                <button className="btn btn-primary btn-block btn-large">
                                     Create Account
                                 </button>
                             </form>

@@ -9,7 +9,7 @@ const useFetch = (url) => {
     // npx json-server --watch data/db.json --port 8000
     useEffect(() => {
         const abortCont = new AbortController();
-        console.log("Runs when dom changes?");
+        // console.log("Runs when dom changes?");
         fetch(
             url, { signal: abortCont.signal }
         ).then(

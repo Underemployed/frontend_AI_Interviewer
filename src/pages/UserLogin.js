@@ -1,6 +1,42 @@
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 const UserLogin = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const history = useHistory();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
+
+        try {
+            const backendUrl = process.env.REACT_APP_BACKEND_URL;
+                // || "http://localhost:5000";
+
+            const res = await fetch(`${backendUrl}/api/auth/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            if (!res.ok) {
+                throw new Error("Invalid credentials");
+            }
+
+            const data = await res.json();
+            localStorage.setItem("token", data.token);
+
+            history.push("/user/dashboard");
+        } catch (err) {
+            setError(err.message);
+            console.log("Error:", err);
+        }
+    };
+
     return (
         <div className="userLogin">
             <section className="py-5">
@@ -10,9 +46,9 @@ const UserLogin = () => {
                             <h2 className="card-title">Job Seeker Login</h2>
                         </div>
                         <div className="card-body">
-                            <div id="errorMessage" className="alert alert-error hidden"></div>
+                            {error && <p className="error">{error}</p>}
 
-                            <form id="loginForm">
+                            <form onSubmit={handleSubmit} noValidate>
                                 <div className="form-group">
                                     <label htmlFor="email" className="form-label">Email Address</label>
                                     <input
@@ -21,6 +57,8 @@ const UserLogin = () => {
                                         name="email"
                                         className="form-input"
                                         placeholder="your.email@example.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         required
                                     />
                                 </div>
@@ -33,11 +71,13 @@ const UserLogin = () => {
                                         name="password"
                                         className="form-input"
                                         placeholder="Enter your password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         required
                                     />
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-block btn-large">
+                                <button className="btn btn-primary btn-block btn-large">
                                     Login
                                 </button>
                             </form>
